@@ -66,4 +66,8 @@ export default {
         }
     }
 }
+<<<<<<< Updated upstream
 </script>
+=======
+</style>
+>>>>>>> Stashed changes
