@@ -5,7 +5,7 @@ import ShoesListComponent from "../shoes-list/pages/shoes-list.component.vue";
 //Lazy loading Components
 const ShoesListService = () => import('../shoes-list/pages/shoes-list.component.vue')
 const AboutComponent = () => import('../public/pages/about.component.vue')
-
+const RegisterComponent = () => import("../public/pages/register.component.vue");
 //Application Routes
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +25,11 @@ const router = createRouter({
             path: '/shoes-list',
             name: 'shoes-list',
             component: ShoesListComponent
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: RegisterComponent
         },
         /*
                 {path:'/', redirect: { name :'home' }}
