@@ -11,6 +11,7 @@ import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import 'primevue/resources/themes/md-light-indigo/theme.css';
 
+
 //Add PrimeFlex
 import 'primeflex/primeflex.css';
 
