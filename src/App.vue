@@ -1,9 +1,9 @@
 <template>
   <pv-toast/>
   <header>
-    <pv-toolbar class="bg-primary">
+      <pv-toolbar :style="{ backgroundColor: '#FFD400' }">
       <template #start>
-        <h3>Sneaker Art</h3>
+        <img src="src/assets/Logo.png" alt="Logo" style="position: absolute; width: 100px; height: auto;"/>
       </template>
       <template #end>
         <div class="flex-column">
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import Toolbar from "primevue/toolbar";
+
 export default {
   data() {
     return {
@@ -33,9 +35,17 @@ export default {
       items: [
         { label: 'Home', to: '/home'},
         { label: 'About', to: '/about'},
-        { label: 'Shoes list', to: '/shoes-list'}
+          { label: 'Design', to: '/about'},
+          { label: 'Trend', to: '/about'},
+          { label: 'Subscription', to: '/about'},
+          { label: 'My Collection', to: '/about'},
+        { label: 'News', to: '/shoes-list'}
       ]
     }
+  },
+  components:{
+      'pv-toolbar': Toolbar,
   }
 }
+
 </script>
