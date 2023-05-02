@@ -6,6 +6,7 @@ import ShoesListComponent from "../shoes-list/pages/shoes-list.component.vue";
 const ShoesListService = () => import('../shoes-list/pages/shoes-list.component.vue')
 const AboutComponent = () => import('../public/pages/about.component.vue')
 const RegisterComponent = () => import("../public/pages/register.component.vue");
+const LoginComponent = () => import("../public/pages/login.component.vue");
 //Application Routes
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,10 +32,14 @@ const router = createRouter({
             name: 'register',
             component: RegisterComponent
         },
+        {
+            path: '/login',
+            name: 'login',
+            component: LoginComponent
+        },
         /*
                 {path:'/', redirect: { name :'home' }}
         */
     ]
-})
-
+});
 export default router

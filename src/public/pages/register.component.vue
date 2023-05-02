@@ -1,42 +1,69 @@
-<script setup>
-import {ref} from "vue";
-import {useUserStore} from "../../stores/user.js";
-const email =ref("");
-const password =ref("");
+<template>
+ <div class="container">
+     <div class="columns">
+         <div class="column is-6 is-offset-3">
+             <h3 class ="title is-3">Crear una cuenta</h3><hr>
+             <form action="#" @submit.prevent="register">
+                 <div class="field">
+                     <label class="label">Name</label>
+                     <div class="control">
+                         <input class="input" type="text" placeholder="e.g Alex Smith" v-model="name">
+                     </div>
+                 </div>
+                 <div class="field">
+                     <p class="control has-icons-left has-icons-right">
+                         <input class="input" type="email" placeholder="Email" v-model="email">
+                         <span class="icon is-small is-left">
+                         <i class="fas fa-envelope"></i>
+                         </span>
+                         <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                         </span>
+                     </p>
+                 </div>
+                 <div class="field">
+                     <p class="control has-icons-left">
+                         <input class="input" type="password" placeholder="Password" v-model="password">
+                         <span class="icon is-small is-left">
+                         <i class="fas fa-lock"></i>
+                         </span>
+                     </p>
+                 </div>
+                 <div class="field">
+                     <p class="control">
+                         <button type="submit" class="button is-primary">
+                             Register
+                         </button>
+                     </p>
+                 </div>
+             </form>
+             <div class="notification is-danger" v-if="error">
+                 {{error}}
+             </div>
+         </div>
+     </div>
+ </div>
+</template>
+<script>
 
-const userStore = useUserStore();
-const register = ()=>{
-  userStore.register(email.value,password.value)
+export default {
+    data(){
+        return{
+            name:'',
+            email:'',
+            password:'',
+            error:''
+        }
+    },
+    name:'Register',
+    methods:{
+        register(){
+            if (this.name && this.email && this.password){
+                    
+            }else {
+                this.error='Todos los campos son requeridos'
+            }
+        }
+    }
 }
 </script>
-
-<template>
-  <div class="register">
-    <h2>Register</h2>
-    <form @submit.prevent="register">
-      <div class="register_input">
-        <input type="email" required v-model="email"/>
-        <label>Email</label>
-      </div>
-      <div class="register_input">
-        <input type="password" required v-model="password"/>
-        <label>Password</label>
-      </div>
-      <button class="register_submit" type="submit">Register</button>
-    </form>
-  </div>
-</template>
-
-
-
-<style>
-.register{
-  margin:100px auto;
-  width: 400px;
-  padding: 40px;
-  background: #282828;
-  box-sizing:border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.6);
-  border-radius: 10px;
-}
-</style>

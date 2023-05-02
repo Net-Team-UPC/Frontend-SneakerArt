@@ -1,5 +1,5 @@
 import {defineStore} from "pinia"
-import {auth} from "../firebase/index.js";
+import {auth} from "../firebase";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 
 export const useUserStore = defineStore("user", {
@@ -24,6 +24,7 @@ export const useUserStore = defineStore("user", {
                 return;
             }
             this.user = auth.currentUser;
+            console.log("Usuario registrado satisfactoriamente")
         },
     },
 });
