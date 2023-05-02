@@ -35,6 +35,7 @@ export default {
       items: [
         { label: 'Home', to: '/home'},
         { label: 'About', to: '/about'},
+        { label: 'Register', to: '/register'},
           { label: 'Design', to: '/about'},
           { label: 'Trend', to: '/about'},
           { label: 'Subscription', to: '/about'},
