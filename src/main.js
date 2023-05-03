@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router";
 import 'bulma/css/bulma.css';
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //Add PrimeVue
 import PrimeVue from "primevue/config";
