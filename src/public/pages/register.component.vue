@@ -32,9 +32,10 @@
                  <div class="field">
                      <p class="control">
                          <button type="submit" class="button is-primary">
-                             Register
+                             Create Account
                          </button>
                      </p>
+                     <p class="subtitle is-5">Already have a account?<RouterLink to="/login">Login</RouterLink></p>
                  </div>
              </form>
              <div class="notification is-danger" v-if="error">
@@ -45,6 +46,7 @@
  </div>
 </template>
 <script>
+
 
 export default {
     data(){
