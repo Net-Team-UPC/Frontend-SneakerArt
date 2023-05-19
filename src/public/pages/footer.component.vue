@@ -1,7 +1,9 @@
 <template>
-  <div class="grid mt-4 p-4 align-content-start p-d-flex p-mt-auto" style="background-color: #FFD400">
-    <div class="col-12 ml-3 align-items-center justify-content-center texto" >
-      <p>Copyright &copy; 2023 SneakerArt, inc All rights reserved.”</p>
+  <div class="position">
+    <div class="grid mt-4 p-4 align-content-start p-d-flex p-mt-auto" style="background-color: #FFD400">
+      <div class="col-12 ml-3 align-items-center justify-content-center text" >
+       <p>Copyright &copy; 2023 SneakerArt, inc All rights reserved.”</p>
+      </div>
     </div>
   </div>
 </template>
@@ -13,7 +15,14 @@ export default {
 </script>
 
 <style>
-.texto{
+.text{
   text-align:center;
+}
+.position {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFD400;
 }
 </style>
