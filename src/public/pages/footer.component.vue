@@ -1,6 +1,6 @@
 <template>
   <div class="position">
-    <div class="grid mt-4 p-4 align-content-start p-d-flex p-mt-auto" style="background-color: #FFD400">
+    <div class="grid mt-4  align-content-start p-d-flex p-mt-auto" style="background-color: #FFD400">
       <div class="col-12 ml-3 align-items-center justify-content-center text" >
        <p>Copyright &copy; 2023 SneakerArt, inc All rights reserved.”</p>
       </div>
