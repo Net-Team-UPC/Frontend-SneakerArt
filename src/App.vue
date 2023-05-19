@@ -28,7 +28,7 @@
 
 <script>
 import Toolbar from "primevue/toolbar";
-import FooterContent from "./public/pages/footer.vue";
+import FooterContent from "./public/pages/footer.component.vue";
 
 export default {
     data() {
