@@ -1,7 +1,7 @@
 <template>
  <div class="container">
      <div class="columns">
-         <div class="column is-6 is-offset-3">
+         <div class="column is-6 is-offset-7">
              <h3 class ="title is-3">Crear una cuenta</h3><hr>
              <form action="#" @submit.prevent="register">
                  <div class="field">
@@ -41,10 +41,14 @@
              <div class="notification is-danger" v-if="error">
                  {{error}}
              </div>
+             <div class="column is-3 background-column">
+
+             </div>
          </div>
      </div>
  </div>
 </template>
+
 <script>
 
 
