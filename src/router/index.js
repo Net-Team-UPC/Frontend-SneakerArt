@@ -14,7 +14,7 @@ const router = createRouter({
         {
             path: '/home',
             name: 'home',
-            alias: '/',
+
             component: HomeComponent
         },
         {
@@ -30,6 +30,7 @@ const router = createRouter({
         {
             path: '/register',
             name: 'register',
+            alias: '/',
             component: RegisterComponent
         },
         {
