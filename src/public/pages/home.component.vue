@@ -9,6 +9,7 @@
       <img class="img-fluid w-80 h-60" src="public/home-image.png" alt="">
     </div>
   </div>
+
 </template>
 
 <style>

@@ -34,7 +34,7 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import Checkbox from 'primevue/checkbox';
-import Password from 'primevue/password';
+import InlineMessage from 'primevue/inlinemessage';
 
 createApp(App)
     .use(router)
@@ -55,5 +55,5 @@ createApp(App)
     .component('pv-dropdown',Dropdown)
     .component('pv-tag',Tag)
     .component('pv-card',Card)
-    .component('pv-password',Password)
+    .component('pv-inline-message',InlineMessage)
     .mount('#app')
