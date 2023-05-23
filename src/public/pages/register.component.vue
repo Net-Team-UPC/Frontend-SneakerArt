@@ -3,7 +3,7 @@
         <div class="left-section">
             <img src="../../../public/logo.jpg" height="417" width="566" alt="Logo" class="logo-image"/>
         </div>
-        <div class="right-section">
+        <div class="right-section"><br><br><br><br><br><br>
            <label class="title">Create your Free Account</label>
             <div class="formulario">
             <div class="flex flex-column gap-2">
@@ -97,59 +97,77 @@ export default {
 }
 .right-section {
     flex: 1;
-    background-color: white; /* Estilo de fondo para la sección derecha */
-    padding: 20px; /* Ajusta el espaciado interior de acuerdo a tus necesidades */
-    .title {
-        position: absolute; /* Cambia 'absolute' por la posición deseada */
-        top: 160px; /* Cambia '50px' por la posición vertical deseada */
-        left: 1200px; /* Cambia '50px' por la posición horizontal deseada */
-        font-size: 26px; /* Cambia '24px' por el tamaño de fuente deseado */
-        font-weight: bold; /* Aplica negrita al texto */
-    }
-    .formulario{
-        position: absolute; /* Cambia 'absolute' por la posición deseada */
-        top: 250px; /* Cambia '50px' por la posición vertical deseada */
-        left: 1000px; /* Cambia '50px' por la posición horizontal deseada */
-        width:750px;
-    }
-    .formulario input[id="name"],
-    .formulario input[id="email"],
-    .formulario input[type="password"] {
-        border-radius: 20px; /* Ajusta el valor según el grado de redondez deseado */
-        background-color:rgba(176, 186, 195, 0.4);
-    }
-    .boton {
-        position: absolute;
-        top: 650px;
-        left: 1200px;
-        width: 340px; /* Ajusta el ancho deseado */
-        height: 60px; /* Ajusta la altura deseada */
-        background-color: #FFD400; /* Cambia '#FFD400' por el color de fondo deseado */
-        color: black; /* Cambia '#FFFFFF' por el color de texto deseado */
-        font-size: 25px; /* Ajusta el tamaño de fuente deseado */
-        font-weight: bold; /* Aplica negrita al texto */
-        border-radius: 10px; /* Ajusta el grado de redondez deseado */
-        border: none; /* Elimina el borde si no lo deseas */
-    }
-    .login{
-        position: absolute; /* Cambia 'absolute' por la posición deseada */
-        top: 730px; /* Cambia '50px' por la posición vertical deseada */
-        left: 1100px; /* Cambia '50px' por la posición horizontal deseada */
-        font-size: 18px; /* Ajusta el tamaño de fuente deseado */
-        width:278px;
-        height:27px;
-    }
-
+    background-color: white;
+    padding: 20px;
+    position: relative; /* Agrega posición relativa para los elementos posicionados absolutamente */
 }
 
+.right-section .title {
+    position: absolute;
+    top: 160px;
+    left: 50px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.right-section .formulario {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: calc(100% - 100px); /* Ajusta el ancho deseado */
+}
+
+.right-section .formulario input[id="name"],
+.right-section .formulario input[id="email"],
+.right-section .formulario input[type="password"] {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(176, 186, 195, 0.4);
+}
+
+.right-section .boton {
+    position: absolute;
+    top: 650px;
+    left: 50px;
+    width: calc(100% - 100px); /* Ajusta el ancho deseado */
+    max-width: 340px;
+    height: 60px;
+    background-color: #FFD400;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+.right-section .login {
+    position: absolute;
+    top: 730px;
+    left: 50px;
+    font-size: 18px;
+    width: calc(100% - 100px); /* Ajusta el ancho deseado */
+    height: 27px;
+    text-align: center;
+}
 
 @media (min-width: 768px) {
-    .split-screen-container {
-        flex-direction: row;
-    }
-    .left-section,
     .right-section {
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .right-section .title,
+    .right-section .formulario,
+    .right-section .boton,
+    .right-section .login {
+        position: static;
+        width: 100%;
+        max-width: 750px; /* Ajusta el ancho máximo deseado */
+        margin-left: auto;
+        margin-right: auto;
     }
 }
+
 </style>
