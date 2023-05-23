@@ -150,7 +150,7 @@ export default {
     text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 430px) {
     .right-section {
         display: flex;
         flex-direction: column;

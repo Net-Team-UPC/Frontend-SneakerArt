@@ -30,13 +30,13 @@ const router = createRouter({
         {
             path: '/register',
             name: 'register',
-            alias: '/',
+
             component: RegisterComponent
         },
         {
             path: '/login',
             name: 'login',
-
+            alias: '/',
             component: LoginComponent
         },
         /*
