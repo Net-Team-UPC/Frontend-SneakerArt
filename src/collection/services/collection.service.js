@@ -1,5 +1,5 @@
 import http from '../../shared/services/http-common.service';
-export class ShoesListService{
+export class CollectionService {
     getAll(){
         return http.get('/shoes');
     }

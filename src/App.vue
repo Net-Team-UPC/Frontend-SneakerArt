@@ -40,7 +40,7 @@ export default {
                 { label: 'Design', to: '/about'},
                 { label: 'Trend', to: '/about'},
                 { label: 'Subscription', to: '/about'},
-                { label: 'My Collection', to: '/shoes-list'},
+                { label: 'My Collection', to: '/collection'},
                 { label: 'News', to: '/about'},
                 { label: 'Register', to: '/register'},
                 { label: 'Login', to: '/login'},

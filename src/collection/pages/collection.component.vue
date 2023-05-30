@@ -31,11 +31,11 @@
 </template>
 
 <script>
-import {ShoesListService} from "../services/shoes-list.service.js";
+import {CollectionService} from "../services/collection.service.js";
 import {FilterMatchMode} from "primevue/api";
 
 export default {
-  name: "shoes-list",
+  name: "collection",
   data() {
     return {
       shoes:[],
@@ -44,7 +44,7 @@ export default {
     };
   },
   created(){
-    this.shoesService = new ShoesListService();
+    this.shoesService = new CollectionService();
     this.shoesService.getAll()
         .then((response) => {
           this.shoes=response.data;
