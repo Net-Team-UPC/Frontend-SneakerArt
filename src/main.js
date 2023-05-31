@@ -34,11 +34,6 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 
-
-
-
-
-
 createApp(App)
     .use(router)
     .use(PrimeVue,{ripple:true})
