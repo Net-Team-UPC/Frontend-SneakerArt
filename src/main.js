@@ -33,7 +33,7 @@ import Toast from "primevue/toast";
 import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
-
+import CascadeSelect from 'primevue/cascadeselect';
 createApp(App)
     .use(router)
     .use(PrimeVue,{ripple:true})
@@ -52,4 +52,5 @@ createApp(App)
     .component('pv-dropdown',Dropdown)
     .component('pv-tag',Tag)
     .component('pv-card',Card)
+    .component('pv-cascade',CascadeSelect)
     .mount('#app')
