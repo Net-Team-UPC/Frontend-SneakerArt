@@ -23,6 +23,7 @@ export default {
                 { label: 'News', to: '/about'},
                 { label: 'Register', to: '/register'},
                 { label: 'Login', to: '/login'},
+                { label: 'Profile', to: '/profile'},
 
             ]
         }
