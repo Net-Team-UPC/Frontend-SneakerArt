@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import HomeComponent from "../public/pages/home.component.vue";
-
+import fpassword from "../public/pages/fpassword.vue";
 //Lazy loading Components
 const ShoesListService = () => import('../collection/pages/collection.component.vue')
 const AboutComponent = () => import('../public/pages/about.component.vue')
@@ -31,6 +31,7 @@ const router = createRouter({
         {
             path: '/register',
             name: 'register',
+
             component: RegisterComponent
         },
         {
@@ -39,10 +40,7 @@ const router = createRouter({
             component: LoginComponent
         },
         {
-            path: '/profile',
-            name: 'profile',
-            alias: '/',
-            component: ProfileComponent
+
         },
         /*
                 {path:'/', redirect: { name :'home' }}

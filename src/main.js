@@ -33,7 +33,11 @@ import Toast from "primevue/toast";
 import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
-import FileUpload from 'primevue/fileupload';
+
+
+
+
+
 
 createApp(App)
     .use(router)
@@ -47,11 +51,12 @@ createApp(App)
     .component('pv-button',Button)
     .component('pv-row',Row)
     .component('pv-sidebar',Sidebar)
+    .component('pv-checkbox', Checkbox)
     .component('pv-menu',Menu)
     .component('pv-dialog',Dialog)
     .component('pv-toast',Toast)
     .component('pv-dropdown',Dropdown)
     .component('pv-tag',Tag)
     .component('pv-card',Card)
-    .component('pv-file-upload',FileUpload)
+
     .mount('#app')

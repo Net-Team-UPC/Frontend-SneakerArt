@@ -4,24 +4,15 @@
             <img src="../../../public/logo.jpg" height="417" width="566" alt="Logo" class="logo-image"/>
         </div>
         <div class="right-section  custom-vertical-space">
-            <label class="title">Login</label>
+            <label class="title">Enter your email to send you a new password</label><br><br>
             <div class="formulario">
                 <div class="flex flex-column gap-2">
                     <label for="email" style="color: #7C838A;">Email</label>
                     <pv-input-text id="email" v-model="email"  placeholder="Enter your Email here"/>
                 </div><br><br>
-                <div class="flex flex-column gap-2">
-                    <label for="password" style="color: #7C838A;">Password</label>
-                    <pv-input-text type="password" id= "password"  v-model="password"  placeholder="Enter your Password here"/>
-                </div>
             </div>
             <br>
-                <div>
-                    <pv-checkbox class="checkbox " v-model="checked" :binary="true" input-id="value"/>
-                    <label for="value" class="ml-2">Remember me</label>
-                </div>
-            <br>
-            <pv-button class="boton" type="button" label="Login" />
+            <pv-button class="boton" type="button" label="Click here to send a email" />
             <br>
         </div>
     </div>
@@ -31,45 +22,10 @@ export default {
 
     data() {
         return {
-            name: '',
             email: '',
-            password: '',
-            checked:false
         };
     },
     methods: {
-
-        handleCreateAccount() {
-            // Verificar si todos los campos están completos
-            if (!this.name || !this.email || !this.password) {
-                alert('No ha llenado todos los campos');
-                return;
-            }
-            // Validar el nombre
-            if (!this.isValidName(this.name)) {
-                alert('Nombre invalido');
-                return;
-            }
-
-            // Validar el correo electrónico
-            if (!this.isValidEmail(this.email)) {
-                alert('Email invalido');
-                return;
-            }
-
-            // Si todas las validaciones pasan, puedes proceder a la siguiente vista o realizar otras acciones
-            // ...
-        },
-        isValidName(name) {
-            // Verificar si el nombre contiene caracteres no permitidos (solo letras y espacios)
-            const regex = /^[a-zA-Z\s]+$/;
-            return regex.test(name);
-        },
-        isValidEmail(email) {
-            // Verificar si el correo electrónico tiene un formato válido
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regex.test(email);
-        }
     }
 };
 </script>
@@ -124,8 +80,7 @@ export default {
     width: calc(100% - 100px); /* Ajusta el ancho deseado */
 }
 
-.right-section .formulario input[id="email"],
-.right-section .formulario input[type="password"] {
+.right-section .formulario input[id="email"]{
     width: 100%;
     border-radius: 20px;
     background-color: rgba(176, 186, 195, 0.4);
@@ -146,9 +101,7 @@ export default {
     border: none;
 }
 
-.right-section .checkbox .p-checkbox-icon{
-    background-color:#FFD400;
-}
+
 
 @media (min-width: 430px) {
     .right-section {
@@ -159,12 +112,17 @@ export default {
     }
 
     .right-section .title,
-    .right-section .formulario,
-    .right-section .boton,
-    .right-section .checkbox .p-checkbox-icon{
+    .right-section .formulario{
         position: static;
         width: 100%;
         max-width: 750px; /* Ajusta el ancho máximo deseado */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .right-section .boton{
+        position: static;
+        width: 100%;
+        max-width: 400px; /* Ajusta el ancho máximo deseado */
         margin-left: auto;
         margin-right: auto;
     }
