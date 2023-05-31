@@ -105,80 +105,67 @@ export default {
     background-color: orange;
 }
 
-.formulario {
-    position: absolute;
-    top: 100px;
-    left: 900px;
-    margin: 20px;
-    width: 700px;
-}
 
-.boton {
-    position: absolute;
-    top: 690px;
-    left: 920px;
-    width: 150px;
-    margin-top: 10px;
-    background-color: #FFD400;
-}
-
-.image-upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.image-container {
-    position: absolute;
-    top: 200px;
-    left: 200px;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    width: 300px; /* Modifica el ancho de la imagen */
-    height: 300px; /* Modifica la altura de la imagen */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%;
-}
-
-.upload-icon {
-    position: absolute;
-    top: 600px;
-    left: 400px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-/* Estilos responsivos */
-@media (max-width: 768px) {
     .formulario {
-        left: 20px;
-        width: calc(100% - 40px);
+        position: absolute;
+        top: 100px;
+        left: 900px;
+        margin: 20px;
+        width: 700px;
+
     }
 
     .boton {
-        left: 20px;
+        position: absolute;
+        top: 690px;
+        left: 920px;
+        width: 150px;
+        margin-top: 10px;
+        background-color: #FFD400;
+
+    }
+
+    .image-upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+
     }
 
     .image-container {
-        width: 150px;
-        height: 150px;
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .image-container img {
+        width: 300px; /* Modifica el ancho de la imagen */
+        height: 300px; /* Modifica la altura de la imagen */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 50%;
+
     }
 
     .upload-icon {
-        top: 350px;
-        left: 20px;
+        position: absolute;
+        top: 600px;
+        left: 400px;
+        margin-top: 10px;
+        cursor: pointer;
+
     }
-}
+/* Estilos responsivos */
 
 
 </style>
