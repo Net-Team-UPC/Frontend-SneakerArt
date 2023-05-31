@@ -7,6 +7,7 @@ const AboutComponent = () => import('../public/pages/about.component.vue')
 const RegisterComponent = () => import("../public/pages/register.component.vue");
 const LoginComponent = () => import("../public/pages/login.component.vue");
 const ShoesListComponent = () =>import("../collection/pages/collection.component.vue")
+const ProfileComponent = () =>import("../public/pages/profile.component.vue")
 //Application Routes
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,10 +40,7 @@ const router = createRouter({
             component: LoginComponent
         },
         {
-            path: '/forgotpassword',
-            name: 'forgotpassword',
-            alias: '/',
-            component: fpassword
+
         },
         /*
                 {path:'/', redirect: { name :'home' }}
