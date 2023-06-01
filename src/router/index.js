@@ -7,7 +7,8 @@ const AboutComponent = () => import('../public/pages/about.component.vue')
 const RegisterComponent = () => import("../public/pages/register.component.vue");
 const LoginComponent = () => import("../public/pages/login.component.vue");
 const ShoesListComponent = () =>import("../collection/pages/collection.component.vue")
-
+const DesignComponent = ()=>import("../public/pages/design.component.vue")
+const ProfileComponent = () =>import("../public/pages/profile.component.vue")
 //Application Routes
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,7 @@ const router = createRouter({
         {
             path: '/collection',
             name: 'collection',
+            alias:'/',
             component: ShoesListComponent
         },
         {
@@ -37,10 +39,20 @@ const router = createRouter({
         {
             path: '/login',
             name: 'login',
+
             component: LoginComponent
         },
         {
+            path: '/profile',
+            name: 'profile',
 
+            component: ProfileComponent
+        },
+        {
+            path: '/design',
+            name: 'design',
+
+            component: DesignComponent
         },
         /*
                 {path:'/', redirect: { name :'home' }}
