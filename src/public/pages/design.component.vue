@@ -1,5 +1,5 @@
 <template>
-    <i class="pi pi-home" style="position: absolute; top: 1rem; left: 1rem; font-size: 2rem;"></i>
+    <i class="pi pi-home" style="position: absolute; top: 1rem; left: 1rem; font-size: 2rem;" @click="gotohome"></i>
 
     <div class="container">
     <div class="brand">
@@ -19,6 +19,11 @@
 
 <script >
 export default {
+    methods: {
+        gotohome() {
+            this.$router.push({name: 'home'})
+        }
+    },
     data() {
         return {
             selectedBrand: null,

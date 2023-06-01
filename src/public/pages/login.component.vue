@@ -21,7 +21,7 @@
                     <label for="value" class="ml-2">Remember me</label>
                 </div>
             <br>
-            <pv-button class="boton" type="button" label="Login" />
+            <pv-button class="boton" type="button" label="Login" @click="gotohome"/>
             <br>
         </div>
     </div>
@@ -38,7 +38,9 @@ export default {
         };
     },
     methods: {
-
+        gotohome(){
+            this.$router.push({name:'home'})
+        },
         handleCreateAccount() {
             // Verificar si todos los campos están completos
             if (!this.name || !this.email || !this.password) {

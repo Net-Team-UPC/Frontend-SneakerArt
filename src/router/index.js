@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
 import HomeComponent from "../public/pages/home.component.vue";
-import fpassword from "../public/pages/fpassword.vue";
 //Lazy loading Components
 const ShoesListService = () => import('../collection/pages/collection.component.vue')
 const AboutComponent = () => import('../public/pages/about.component.vue')
@@ -9,6 +8,8 @@ const LoginComponent = () => import("../public/pages/login.component.vue");
 const ShoesListComponent = () =>import("../collection/pages/collection.component.vue")
 const DesignComponent = ()=>import("../public/pages/design.component.vue")
 const ProfileComponent = () =>import("../public/pages/profile.component.vue")
+const ForgotPasswordComponent = () =>import("../public/pages/fpassword.vue")
+
 //Application Routes
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,13 +28,13 @@ const router = createRouter({
         {
             path: '/collection',
             name: 'collection',
-            alias:'/',
+
             component: ShoesListComponent
         },
         {
             path: '/register',
             name: 'register',
-
+            alias:'/',
             component: RegisterComponent
         },
         {
@@ -45,7 +46,6 @@ const router = createRouter({
         {
             path: '/profile',
             name: 'profile',
-
             component: ProfileComponent
         },
         {
@@ -53,6 +53,12 @@ const router = createRouter({
             name: 'design',
 
             component: DesignComponent
+        },
+        {
+            path: '/fpassword',
+            name: 'fpassword',
+
+            component: ForgotPasswordComponent
         },
         /*
                 {path:'/', redirect: { name :'home' }}

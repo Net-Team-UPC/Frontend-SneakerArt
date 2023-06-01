@@ -2,7 +2,7 @@
 <template>
     <div>
         <div class="toolbar">
-            <i class="pi pi-home custom-icon"></i>
+            <i class="pi pi-home custom-icon" @click="gotohome"></i>
         </div>
 
         <div class="formulario">
@@ -62,6 +62,9 @@ export default {
         };
     },
     methods: {
+        gotohome(){
+            this.$router.push({name:'home'})
+        },
         openFilePicker() {
             this.$refs.fileInput.click();
         },

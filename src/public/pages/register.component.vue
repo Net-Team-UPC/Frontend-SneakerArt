@@ -20,7 +20,7 @@
             </div>
             </div>
             <br>
-            <pv-button class="boton" type="button" label="Create Account" @click="handleCreateAccount"/>
+            <pv-button class="boton" type="button" label="Create Account" @click="gotologin"/>
             <br>
             <small class="login" style="color:#7C838A">Already have a account?<span style="color: #FFD400;">Login</span></small>
         </div>
@@ -36,6 +36,19 @@ export default {
         };
     },
     methods: {
+        handleButtonClick() {
+            this.handleCreateAccount()
+                .then(() => {
+                    this.gotologin();
+                })
+                .catch((error) => {
+                    // Manejo de errores en caso de fallo en handleCreateAccount
+                    console.error(error);
+                });
+        },
+        gotologin(){
+            this.$router.push({name:'login'})
+        },
         handleCreateAccount() {
             // Verificar si todos los campos están completos
             if (!this.name || !this.email || !this.password) {
@@ -47,7 +60,6 @@ export default {
                 alert('Nombre invalido');
                 return;
             }
-
             // Validar el correo electrónico
             if (!this.isValidEmail(this.email)) {
                 alert('Email invalido');
