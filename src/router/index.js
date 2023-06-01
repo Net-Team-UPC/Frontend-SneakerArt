@@ -6,8 +6,8 @@ const AboutComponent = () => import('../public/pages/about.component.vue')
 const RegisterComponent = () => import("../public/pages/register.component.vue");
 const LoginComponent = () => import("../public/pages/login.component.vue");
 const ShoesListComponent = () =>import("../collection/pages/collection.component.vue")
-const DesignComponent = ()=>import("../public/pages/design.component.vue")
-const ProfileComponent = () =>import("../public/pages/profile.component.vue")
+const DesignComponent = ()=>import("../design/pages/design.component.vue")
+const ProfileComponent = () =>import("../profile/pages/profile.component.vue")
 const ForgotPasswordComponent = () =>import("../public/pages/fpassword.vue")
 
 //Application Routes
@@ -34,7 +34,7 @@ const router = createRouter({
         {
             path: '/register',
             name: 'register',
-            alias:'/',
+
             component: RegisterComponent
         },
         {
@@ -51,7 +51,7 @@ const router = createRouter({
         {
             path: '/design',
             name: 'design',
-
+            alias:'/',
             component: DesignComponent
         },
         {
