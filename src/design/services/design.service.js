@@ -6,7 +6,6 @@ export class DesignService {
     getById(id){
         return http.get(`/design/${id}`);
     }
-
     create(data){
         return http.post(`/design`,data);
     }
@@ -15,5 +14,14 @@ export class DesignService {
     }
     delete(id){
         return http.delete(`/design/${id}`);
+    }
+    search(brand, model, color) {
+        return http.get(`/design/`, {
+            params: {
+                brand: brand,
+                model: model,
+                color: color
+            }
+        });
     }
 }

@@ -17,10 +17,13 @@
         <div class="color">
             <pv-dropdown v-model="selectedColor" :options="availableColors" showClear optionLabel="name" placeholder="Select a Color" :disabled="!selectedModel" class="w-full md:w-14rem" />
         </div>
-        <pv-button class="boton" type="button" label="Search" @click=""/>
-
+        <br>
+        <pv-button class="boton" type="button" label="Search" @click="searchDesign" />
+        <br>
     </div>
-
+    <div class="image-container" v-if="selectedImage">
+        <img :src="selectedImage" alt="Selected Design" class="design-image" />
+    </div>
 </template>
 
 <script >
@@ -32,13 +35,37 @@ export default {
         gotohome() {
             this.$router.push({name: 'home'})
         },
+        initFilters() {
+            this.filters = {global: {value: null, matchMode: FilterMatchMode.CONTAINS}};
+        },
+        searchDesign() {
+            const selectedBrand = this.selectedBrand;
+            const selectedModel = this.selectedModel;
+            const selectedColor = this.selectedColor.name;
+            console.log(selectedBrand);
+            console.log(selectedModel);
+            console.log(selectedColor);
+            this.designService.search(selectedBrand, selectedModel, selectedColor)
+                .then((response) => {
+                    if (response.data.length > 0) {
+                        const matchedDesign = response.data[0];
+                        this.selectedImage = matchedDesign.img;
+                    } else {
+                        this.selectedImage = null; // No matching design found
+                        console.log("No funciona mano");
+                    }
+                }).catch(e => this.errors.push(e));
+        }
+
      },
     data() {
         return {
+            errors: [],
             designs:[],
             design: {},
             designService:null,
-
+            selectedImage: null,
+            selectedBrand:null,
             brand: [
                 { name: 'Nike', code: 'NK' },
                 { name: 'Adidas', code: 'AD' },
@@ -104,6 +131,14 @@ export default {
             return [];
         }
     },
+    created(){
+        this.designService = new DesignService();
+        this.designService.getAll()
+            .then((response) => {
+                this.designs=response.data;
+            }).catch(e => this.errors.push(e));
+    },
+
 };
 </script>
 
@@ -142,6 +177,20 @@ body {
     font-weight: bold;
     border-radius: 10px;
     border: none;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    margin-top: -150px; /* Ajusta el valor de margin-top según tus necesidades */
+    margin-left: 250px; /* Ajusta el valor de margin-left según tus necesidades */
+}
+
+.design-image {
+    width: 500px;
+    height: 500px;
 }
 @media (max-width: 768px) {
     .container {

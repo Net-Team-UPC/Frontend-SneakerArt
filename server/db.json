@@ -46,99 +46,99 @@
   "design": [
     {
       "id": 1,
-      "brand": "Nike",
+      "brand": "NK",
       "model": "Free Metcon 5",
       "color": "White",
       "size": " ",
-      "img": "/assets/DesignPic/Nike/Free Metcon/White.jpg"
+      "img": "src/assets/DesignPic/Nike/FreeMetcon/White.jpg"
     },
     {
       "id": 2,
-      "brand": "Nike",
+      "brand": "NK",
       "model": "Free Metcon 5",
       "color": "Black",
       "size": " ",
-      "img": "/assets/DesignPic/Nike/Free Metcon/Black.jpg"
+      "img": "src/assets/DesignPic/Nike/FreeMetcon/Black.jpg"
     },
     {
       "id": 3,
-      "brand": "Nike",
+      "brand": "NK",
       "model": "Rival Fly 3",
       "color": "Green",
       "size": " ",
-      "img": "/assets/DesignPic/Nike/Rival Fly 3/Green.jpg"
+      "img": "src/assets/DesignPic/Nike/RivalFly3/Green.jpg"
     },
     {
       "id": 4,
-      "brand": "Nike",
+      "brand": "NK",
       "model": "Rival Fly 3",
       "color": "Blue",
       "size": " ",
-      "img": "/assets/DesignPic/Nike/Rival Fly 3/Blue.jpg"
+      "img": "src/assets/DesignPic/Nike/RivalFly3/Blue.jpg"
     },
     {
       "id": 5,
-      "brand": "Adidas",
+      "brand": "AD",
       "model": "Forum Low Classic",
       "color": "Cloud White",
       "size": " ",
-      "img": "/assets/DesignPic/Adidas/Forum Low Classic/Cloud White.png"
+      "img": "src/assets/DesignPic/Adidas/ForumLowClassic/CloudWhite.png"
     },
     {
       "id": 6,
-      "brand": "Adidas",
+      "brand": "AD",
       "model": "Forum Low Classic",
       "color": "Better Scarlet",
       "size": " ",
-      "img": "/assets/DesignPic/Adidas/Forum Low Classic/Better Scarlet.png"
+      "img": "src/assets/DesignPic/Adidas/ForumLowClassic/BetterScarlet.png"
     },
     {
       "id": 7,
-      "brand": "Adidas",
+      "brand": "AD",
       "model": "Ozelia",
       "color": "Cloud White",
       "size": " ",
-      "img": "/assets/DesignPic/Adidas/Ozelia/Cloud White.png"
+      "img": "src/assets/DesignPic/Adidas/Ozelia/CloudWhite.png"
     },
     {
       "id": 8,
-      "brand": "Adidas",
+      "brand": "AD",
       "model": "Ozelia",
       "color": "Core Black",
       "size": " ",
-      "img": "/assets/DesignPic/Adidas/Ozelia/Core Black.png"
+      "img": "src/assets/DesignPic/Adidas/Ozelia/CoreBlack.png"
     },
     {
       "id": 9,
-      "brand": "Converse",
+      "brand": "CV",
       "model": "Chuck Taylor 70",
       "color": "Black",
       "size": " ",
-      "img": "/assets/DesignPic/Converse/Chuck/Chuck Taylor.png"
+      "img": "src/assets/DesignPic/Converse/Chuck/ChuckTaylor.png"
     },
     {
       "id": 10,
-      "brand": "Converse",
+      "brand": "CV",
       "model": "Chuck Taylor 70",
       "color": "Brown",
       "size": " ",
-      "img": "/assets/DesignPic/Converse/Chuck/Chuck 70.png"
+      "img": "src/assets/DesignPic/Converse/Chuck/Chuck70.png"
     },
     {
       "id": 11,
-      "brand": "Converse",
+      "brand": "CV",
       "model": "Hombre Run Star Motion Ox",
       "color": "White",
       "size": " ",
-      "img": "/assets/DesignPic/Converse/Hombre Run Star/White.png"
+      "img": "src/assets/DesignPic/Converse/HombreRunStar/White.jpg"
     },
     {
       "id": 12,
-      "brand": "Converse",
+      "brand": "CV",
       "model": "Hombre Run Star Motion Ox",
       "color": "Black",
       "size": " ",
-      "img": "/assets/DesignPic/Converse/Hombre Run Star/Black.png"
+      "img": "src/assets/DesignPic/Converse/HombreRunStar/Black.jpg"
     }
   ]
 }
