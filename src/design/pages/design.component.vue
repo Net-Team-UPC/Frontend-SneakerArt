@@ -1,21 +1,22 @@
 <template>
+    <div class="design-view">
     <i class="pi pi-home" style="position: absolute; top: 1rem; left: 1rem; font-size: 2rem;" @click="gotohome"></i>
 
     <div class="container">
         <div class="brand">
-            <pv-dropdown v-model="selectedBrand" :options="brand" showClear option-label="name" option-value="code" placeholder="Select a Brand" class="w-full md:w-14rem" />
+            <pv-dropdown v-model="selectedBrand" :options="brand" showClear option-label="name" option-value="code" placeholder="Select a Brand" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; "/>
         </div>
         <br>
         <div class="models">
-            <pv-dropdown v-model="selectedModel" :options="availableModels" showClear placeholder="Select a Model" :disabled="!selectedBrand" class="w-full md:w-14rem" />
+            <pv-dropdown v-model="selectedModel" :options="availableModels" showClear placeholder="Select a Model" :disabled="!selectedBrand" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; "/>
         </div>
         <br>
         <div class="size">
-            <pv-dropdown v-model="selectedSize" :options="size" showClear optionLabel="name" placeholder="Select a Size" class="w-full md:w-14rem" />
+            <pv-dropdown v-model="selectedSize" :options="size" showClear optionLabel="name" placeholder="Select a Size" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; "/>
         </div>
         <br>
         <div class="color">
-            <pv-dropdown v-model="selectedColor" :options="availableColors" showClear optionLabel="name" placeholder="Select a Color" :disabled="!selectedModel" class="w-full md:w-14rem" />
+            <pv-dropdown v-model="selectedColor" :options="availableColors" showClear optionLabel="name" placeholder="Select a Color" :disabled="!selectedModel" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; " />
         </div>
         <br>
         <pv-button class="boton" type="button" label="Search" @click="searchDesign" />
@@ -23,6 +24,7 @@
     </div>
     <div class="image-container" v-if="selectedImage">
         <img :src="selectedImage" alt="Selected Design" class="design-image" />
+    </div>
     </div>
 </template>
 
@@ -138,19 +140,16 @@ export default {
                 this.designs=response.data;
             }).catch(e => this.errors.push(e));
     },
-
 };
 </script>
 
 <style>
-body {
+.design-view {
     min-height: 100vh;
     background-image: url('/public/Fondo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* Otros estilos */
-    /* ... */
 }
 .container {
     display: flex;
@@ -162,39 +161,52 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(50%);
-
-}
-.boton {
-    position: absolute;
-    top: 350px;
-    left: 550px;
-    width: calc(100% - 100px); /* Ajusta el ancho deseado */
-    max-width: 200px;
-    height: 40px;
-    background-color: #FFD400;
-    color: black;
-    font-size: 25px;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
+    margin-left: 30%; /* Ajusta el margen izquierdo en porcentaje para moverlo a la derecha */
+    .boton {
+        position: absolute;
+        top: 100%; /* Ajusta la posición vertical en relación con el contenedor */
+        left: 50%; /* Ajusta la posición horizontal en relación con el contenedor */
+        transform: translate(-50%, -50%); /* Centra el botón exactamente en el centro del contenedor */
+        width: 80%; /* Ajusta el ancho del botón utilizando un porcentaje */
+        max-width: 200px; /* Establece un ancho máximo en píxeles */
+        height: 40px;
+        background-color: #FFD400;
+        color: black;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+    }
 }
 .image-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    height: 400px;
-    width: 400px;
-    margin-top: -150px; /* Ajusta el valor de margin-top según tus necesidades */
-    margin-left: 250px; /* Ajusta el valor de margin-left según tus necesidades */
+    height: 50vh;
+    width: 70vw;
+    margin-top: -20vh; /* Ajusta el valor de margin-top según tus necesidades */
+    margin-left: 10vw; /* Ajusta el valor de margin-left según tus necesidades */
 }
-
 .design-image {
-    width: 500px;
-    height: 500px;
+    width: 40%;
+    height: auto;
+    border: 4px solid darkseagreen; /* Ajusta el grosor y color del borde según tus preferencias */
+
 }
 @media (max-width: 768px) {
+    .boton,
     .container {
         width: 100%;
+    }
+    .image-container {
+        height: 30vh; /* Ajusta la altura en tamaños de pantalla más pequeños */
+        width: 90vw; /* Ajusta el ancho en tamaños de pantalla más pequeños */
+        margin-top: -15vh; /* Ajusta el valor de margin-top en tamaños de pantalla más pequeños */
+        margin-left: 5vw; /* Ajusta el valor de margin-left en tamaños de pantalla más pequeños */
+    }
+    .design-image {
+        width: 200px;
+        height: 200px;
     }
 }
 </style>
