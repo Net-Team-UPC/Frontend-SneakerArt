@@ -15,6 +15,15 @@ export class ProfileService {
     create(data){
         return http.post(`/profile`,data);
     }
+    getLastId() {
+        return http.get('/profile/lastId')
+            .then(response => {
+                return response.data.lastId;
+            })
+            .catch(error => {
+                throw error;
+            });
+    }
     update(id,data){
         return http.put(`/profile/${id}`,data);
     }

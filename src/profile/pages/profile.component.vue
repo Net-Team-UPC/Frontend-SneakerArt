@@ -124,7 +124,8 @@ export default {
     .formulario {
         position: absolute;
         top: 100px;
-        left: 900px;
+        left: 60%;
+        transform:translateX(-50%);
         margin: 20px;
         width: 700px;
 
@@ -133,7 +134,8 @@ export default {
     .boton {
         position: absolute;
         top: 690px;
-        left: 920px;
+        left: 60%;
+        transform:translateX(-50%);
         width: 150px;
         margin-top: 10px;
         background-color: #FFD400;
@@ -151,7 +153,8 @@ export default {
     .image-container {
         position: absolute;
         top: 200px;
-        left: 200px;
+        left: 20%;
+        transform:translateX(-50%);;
         width: 500px;
         height: 500px;
         display: flex;
@@ -175,12 +178,37 @@ export default {
     .upload-icon {
         position: absolute;
         top: 600px;
-        left: 400px;
+        left: 20%;
+        transform:translateX(-50%);
         margin-top: 10px;
         cursor: pointer;
 
     }
 /* Estilos responsivos */
+@media (max-width: 768px) {
+    .formulario {
+        width: 90%;
+        max-width: 500px;
+    }
 
+    .boton {
+        width: 100%;
+        max-width: 300px;
+    }
 
+    .image-container {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .upload-icon {
+        top: 500px;
+    }
+}
 </style>

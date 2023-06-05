@@ -159,6 +159,18 @@
       "name": "Maki Markez",
       "email": "maki@gmail.com",
       "password": "upc"
+    },
+    {
+      "id": "4",
+      "name": "Abel Montoya ",
+      "email": "elabol@gmail.com",
+      "password": "andrea"
+    },
+    {
+      "name": "Rumia Rumiante",
+      "email": "diegoesmiamor@gmail.com",
+      "password": "nachito",
+      "id": "R2bedf9"
     }
   ]
 }

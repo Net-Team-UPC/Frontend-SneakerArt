@@ -39,10 +39,13 @@ export default {
             name: "",
             email: "",
             password: "",
-            counter: 1, // Nuevo contador para generar IDs
+            counter: "", // Nuevo contador para generar IDs
             showError: false, // Bandera para controlar si se muestra el error o no
 
         };
+    },
+    created() {
+        this.profileService = new ProfileService();
     },
     methods: {
         async handleButtonClick() {
@@ -59,8 +62,6 @@ export default {
             this.$router.push({ name: "login" });
         },
         async handleCreateAccount() {
-
-            const id = this.counter.toString(); // Convertir el contador a una cadena
             // Verificar si todos los campos están completos
             if (!this.name || !this.email || !this.password) {
                 alert("No ha llenado todos los campos");
@@ -82,7 +83,6 @@ export default {
 
             // Crear un objeto con los datos del perfil
             const profileData = {
-                id,
                 name: this.name,
                 email: this.email,
                 password: this.password,
@@ -99,6 +99,8 @@ export default {
                 console.error(error);
                 // Manejo de errores en caso de fallo al guardar en la base de datos
                 alert("Error al crear la cuenta");
+                this.showError = true; // Establecer la bandera de error en true
+
             }
             this.counter++; // Incrementar el contador para generar el nuevo ID
         },
@@ -113,6 +115,7 @@ export default {
             return regex.test(email);
         },
     },
+
 };
 </script>
 <style>
