@@ -8,33 +8,33 @@
         <div class="formulario">
             <div class="flex flex-column gap-2">
                 <label for="name" style="color: #7C838A;"> Full Name</label>
-                <pv-input-text id="name" :readonly="!isEditing" v-model="name" />
+                <pv-input-text id="name"  v-model="name" />
             </div>
             <div class="flex flex-column gap-2">
                 <label for="age" style="color: #7C838A;">Age</label>
-                <pv-input-text id="age" :readonly="!isEditing" v-model="age" />
+                <pv-input-text id="age"  v-model="age" />
             </div>
             <div class="flex flex-column gap-2">
                 <label for="country" style="color: #7C838A;">Country</label>
-                <pv-input-text id="country" :readonly="!isEditing" v-model="country" />
+                <pv-input-text id="country"  v-model="country" />
             </div>
             <div class="flex flex-column gap-2">
                 <label for="size" style="color: #7C838A;">Size</label>
-                <pv-input-text id="size" :readonly="!isEditing" v-model="size" />
+                <pv-input-text id="size"  v-model="size" />
             </div>
             <div class="flex flex-column gap-2">
                 <label for="fbrand" style="color: #7C838A;">Favorite Brand</label>
-                <pv-input-text id="fbrand" :readonly="!isEditing" v-model="fbrand" />
+                <pv-input-text id="fbrand"  v-model="fbrand" />
             </div>
             <div class="flex flex-column gap-2">
                 <label for="email" style="color: #7C838A;">Email</label>
-                <pv-input-text id="email" :readonly="!isEditing" v-model="email" />
+                <pv-input-text id="email"  v-model="email" />
             </div>
         </div>
         <br>
         <div class="image-upload">
             <div class="image-container">
-                <img :src="imageUrl" alt="Imagen">
+                <img v-if="imageUrl" :src="imageUrl" alt="Profile Image" />
             </div>
             <div class="upload-icon" @click="openFilePicker">
                 <i class="pi pi-upload"></i>
@@ -42,7 +42,7 @@
             <input type="file" ref="fileInput" style="display: none" @change="handleFileChange">
         </div>
         <br>
-        <pv-button class="boton" type="button" label="Edit" @click="toggleEditing" />
+        <pv-button class="boton" type="button" label="Edit"  />
         <br>
         <div class="footer"></div>
     </div>
@@ -51,11 +51,10 @@
 <script>
 import {ProfileService} from "../services/profile.service.js";
 export default {
-
     data() {
         return {
-            profileService:null,
-            profiles:[],
+            profileService: null,
+            profiles: [],
             errors: [],
             name: '',
             age: '',
@@ -63,41 +62,38 @@ export default {
             size: '',
             fbrand: '',
             email: '',
-            imageUrl: 'ruta_de_la_imagen_actual.jpg'
+            imageUrl: '', // Elimina la ruta de la imagen actual
+            isEditing: false,
         };
     },
     methods: {
-        gotohome(){
-            this.$router.push({name:'home'})
+        gotohome() {
+            this.$router.push({ name: 'home' });
         },
         openFilePicker() {
             this.$refs.fileInput.click();
         },
         handleFileChange(event) {
-            if (!this.isEditing) {
-                return;
-            }
             const file = event.target.files[0];
-            // Aquí puedes realizar cualquier lógica adicional, como validar el tipo de archivo, tamaño, etc.
+            if (!file) {
+                return; // Salir si no se seleccionó ningún archivo
+            }
 
-            // Ejemplo para mostrar la nueva imagen
             const reader = new FileReader();
             reader.onload = (e) => {
-                this.imageUrl = e.target.result;
+                const imageSource = e.target.result;
+                this.imageUrl = imageSource;
             };
             reader.readAsDataURL(file);
-
         },
-        toggleEditing() {
-            this.isEditing = !this.isEditing;
-        }
     },
-    created(){
+    created() {
         this.profileService = new ProfileService();
         this.profileService.getAll()
             .then((response) => {
-                this.profiles=response.data;
-            }).catch(e => this.errors.push(e));
+                this.profiles = response.data;
+            })
+            .catch(e => this.errors.push(e));
     }
 };
 </script>
@@ -160,7 +156,6 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     .image-container img {
@@ -172,7 +167,7 @@ export default {
         max-width: 100%;
         max-height: 100%;
         border-radius: 50%;
-
+        border: 4px solid darkseagreen; /* Ajusta el grosor y color del borde según tus preferencias */
     }
 
     .upload-icon {

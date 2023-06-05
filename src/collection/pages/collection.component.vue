@@ -1,5 +1,6 @@
 <template>
-  <div class="row">
+    <i class="pi pi-home" style="position: absolute; top: 1rem; left: 1rem; font-size: 2rem;" @click="gotohome"></i>
+    <div class="row">
     <div class="container">
       <div class="row">
         <div class="column"  v-for=" shoe of shoes">
@@ -53,8 +54,11 @@ export default {
   methods:{
     initFilters() {
       this.filters = {global: {value: null, matchMode: FilterMatchMode.CONTAINS}};
-    }
-  }
+    },
+      gotohome() {
+          this.$router.push({name: 'home'})
+      },
+  },
 }
 
 </script>
