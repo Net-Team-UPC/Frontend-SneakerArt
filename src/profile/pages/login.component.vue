@@ -27,10 +27,14 @@
     </div>
 </template>
 <script>
+import {ProfileService} from "../services/profile.service.js";
 export default {
 
     data() {
         return {
+            profileService: null,
+            profiles: [],
+            errors: [],
             name: '',
             email: '',
             password: '',
