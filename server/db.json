@@ -50,7 +50,7 @@
       "model": "Free Metcon 5",
       "color": "White",
       "size": " ",
-      "img": "src/assets/DesignPic/Nike/FreeMetcon/White.jpg"
+      "img": "https://images.nike.com/is/image/DotCom/DV3949_100_C_PREM?hei=3144&wid=3144&fmt=jpg&bgc=F5F5F5&iccEmbed=1"
     },
     {
       "id": 2,
@@ -58,7 +58,7 @@
       "model": "Free Metcon 5",
       "color": "Black",
       "size": " ",
-      "img": "src/assets/DesignPic/Nike/FreeMetcon/Black.jpg"
+      "img": "https://images.nike.com/is/image/DotCom/DV3949_001_C_PREM?hei=3144&wid=3144&fmt=jpg&bgc=F5F5F5&iccEmbed=1"
     },
     {
       "id": 3,
@@ -66,7 +66,7 @@
       "model": "Rival Fly 3",
       "color": "Green",
       "size": " ",
-      "img": "src/assets/DesignPic/Nike/RivalFly3/Green.jpg"
+      "img": "https://images.nike.com/is/image/DotCom/CT2405_358_C_PREM?hei=3144&wid=3144&fmt=jpg&bgc=F5F5F5&iccEmbed=1"
     },
     {
       "id": 4,
@@ -74,7 +74,7 @@
       "model": "Rival Fly 3",
       "color": "Blue",
       "size": " ",
-      "img": "src/assets/DesignPic/Nike/RivalFly3/Blue.jpg"
+      "img": "https://images.nike.com/is/image/DotCom/CT2405_451_C_PREM?hei=3144&wid=3144&fmt=jpg&bgc=F5F5F5&iccEmbed=1"
     },
     {
       "id": 5,
@@ -82,7 +82,7 @@
       "model": "Forum Low Classic",
       "color": "Cloud White",
       "size": " ",
-      "img": "src/assets/DesignPic/Adidas/ForumLowClassic/CloudWhite.png"
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/05abb101c7b640e08da3af5600fc5629_9366/Zapatillas_Forum_Low_Classic_x_Andre_Saraiva_Blanco_FZ6353_01_standard.jpg"
     },
     {
       "id": 6,
@@ -90,7 +90,7 @@
       "model": "Forum Low Classic",
       "color": "Better Scarlet",
       "size": " ",
-      "img": "src/assets/DesignPic/Adidas/ForumLowClassic/BetterScarlet.png"
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a024871dae904a0788d5af33016b01df_9366/Zapatillas_Forum_Low_Classic_Rojo_FZ6265_01_standard.jpg"
     },
     {
       "id": 7,
@@ -98,7 +98,7 @@
       "model": "Ozelia",
       "color": "Cloud White",
       "size": " ",
-      "img": "src/assets/DesignPic/Adidas/Ozelia/CloudWhite.png"
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c789549c7aa046d29c22ad2f00dc7e2d_9366/Zapatillas_Ozelia_Blanco_H04251_01_standard.jpg"
     },
     {
       "id": 8,
@@ -106,7 +106,7 @@
       "model": "Ozelia",
       "color": "Core Black",
       "size": " ",
-      "img": "src/assets/DesignPic/Adidas/Ozelia/CoreBlack.png"
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c2d47865bc8143acb3c0ad2401570a53_9366/Zapatillas_Ozelia_Negro_H04250_01_standard.jpg"
     },
     {
       "id": 9,
@@ -114,7 +114,7 @@
       "model": "Chuck Taylor 70",
       "color": "Black",
       "size": " ",
-      "img": "src/assets/DesignPic/Converse/Chuck/ChuckTaylor.png"
+      "img": "https://coliseum.vteximg.com.br/arquivos/ids/561387-1000-1000/ZAPATILLA-HOMBRE-CONVERSE-CHUCK-TAYLOR-ALL-STAR-CX-SPRAY-PAINT-A03463C-0_1.jpg?v=638195115212400000"
     },
     {
       "id": 10,
@@ -122,7 +122,7 @@
       "model": "Chuck Taylor 70",
       "color": "Brown",
       "size": " ",
-      "img": "src/assets/DesignPic/Converse/Chuck/Chuck70.png"
+      "img": "https://coliseum.vteximg.com.br/arquivos/ids/562945-1000-1000/ZAPATILLA-HOMBRE-CONVERSE-CHUCK-70-FINALS-CLUB-A06835C-0_1.jpg?v=638195123782300000"
     },
     {
       "id": 11,
@@ -130,7 +130,7 @@
       "model": "Hombre Run Star Motion Ox",
       "color": "White",
       "size": " ",
-      "img": "src/assets/DesignPic/Converse/HombreRunStar/White.jpg"
+      "img": "https://coliseum.vteximg.com.br/arquivos/ids/479926-1000-1000/172896C-0_1.jpg?v=637944475720700000"
     },
     {
       "id": 12,
@@ -138,7 +138,7 @@
       "model": "Hombre Run Star Motion Ox",
       "color": "Black",
       "size": " ",
-      "img": "src/assets/DesignPic/Converse/HombreRunStar/Black.jpg"
+      "img": "https://coliseum.vteximg.com.br/arquivos/ids/479920-1000-1000/172895C-0_1.jpg?v=637944475701130000"
     }
   ],
   "profile": [
