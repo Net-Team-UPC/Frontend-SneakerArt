@@ -83,6 +83,7 @@ export default {
 
             // Crear un objeto con los datos del perfil
             const profileData = {
+
                 name: this.name,
                 email: this.email,
                 password: this.password,
