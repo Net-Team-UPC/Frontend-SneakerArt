@@ -145,7 +145,7 @@ export default {
 <style>
 .design-view {
     min-height: 100vh;
-    background-image: url('/public/Fondo.jpg');
+    background-image: url('/src/assets/Fondo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

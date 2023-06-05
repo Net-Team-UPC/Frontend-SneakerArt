@@ -1,7 +1,7 @@
 <template>
     <div class="split-screen-container">
         <div class="left-section">
-            <img src="../../../public/logo.jpg" height="417" width="566" alt="Logo" class="logo-image"/>
+            <img src="../../assets/logo.jpg" height="417" width="566" alt="Logo" class="logo-image"/>
         </div>
         <div class="right-section  custom-vertical-space">
             <label class="title">Login</label>

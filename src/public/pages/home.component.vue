@@ -1,7 +1,7 @@
 <template>
     <pv-toolbar :style="{ backgroundColor: '#FFD400' }">
         <template #start>
-            <img src="../../../public/logo.jpg" height="417" width="566" alt="Logo" style="position: absolute; width: 100px; height: auto;"/>/>
+            <img src="../../assets/logo.jpg" height="417" width="566" alt="Logo" style="position: absolute; width: 100px; height: auto;"/>/>
         </template>
         <template #end>
             <div class="flex-column">
@@ -25,7 +25,7 @@
       <pv-button class="centered-button" style="color: black" label="Trending Now" text raised></pv-button>
     </div>
     <div class="col-6 right img-fluid text-center">
-      <img class="img-fluid w-80 h-60" src="public/home-image.png" alt="">
+      <img class="img-fluid w-80 h-60" src="../../assets/home-image.png" alt="">
     </div>
   </div>
 
