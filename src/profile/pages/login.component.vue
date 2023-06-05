@@ -16,12 +16,11 @@
                 </div>
             </div>
             <br>
-                <div>
-                    <pv-checkbox class="checkbox " v-model="checked" :binary="true" input-id="value"/>
-                    <label for="value" class="ml-2">Remember me</label>
-                </div>
+            <label>
+                Forgot the password? <span style="color: #FFD400;cursor: pointer;" @click="gotoFpassoword">Click here</span>
+            </label>
             <br>
-            <pv-button class="boton" type="button" label="Login" @click="gotohome"/>
+            <pv-button class="boton" type="button" label="Login" @click="verifyCredentials"/>
             <br>
         </div>
     </div>
@@ -29,54 +28,59 @@
 <script>
 import {ProfileService} from "../services/profile.service.js";
 export default {
-
     data() {
         return {
             profileService: null,
             profiles: [],
             errors: [],
-            name: '',
-            email: '',
-            password: '',
-            checked:false
+            name: "",
+            email: "",
+            password: "",
+            checked: false,
         };
     },
     methods: {
-        gotohome(){
-            this.$router.push({name:'home'})
-        },
-        handleCreateAccount() {
-            // Verificar si todos los campos están completos
-            if (!this.name || !this.email || !this.password) {
-                alert('No ha llenado todos los campos');
+        async verifyCredentials() {
+            // Verificar si el email y la contraseña están completos
+            if (!this.email || !this.password) {
+                alert("Por favor, ingrese su email y contraseña");
                 return;
             }
-            // Validar el nombre
-            if (!this.isValidName(this.name)) {
-                alert('Nombre invalido');
-                return;
-            }
+            console.log(this.email);
+            try {
+                // Inicializar el servicio de perfil
+                this.profileService = new ProfileService();
 
-            // Validar el correo electrónico
-            if (!this.isValidEmail(this.email)) {
-                alert('Email invalido');
-                return;
-            }
+                // Obtener el perfil del usuario por el email
+                const userProfile = await this.profileService.getByEmail(this.email);
 
-            // Si todas las validaciones pasan, puedes proceder a la siguiente vista o realizar otras acciones
-            // ...
+                // Verificar si el usuario existe
+                if (!userProfile) {
+                    alert("El email ingresado no corresponde a ningún usuario");
+                    return;
+                }
+                const userPassword = await this.profileService.getByPassword(this.password);
+                console.log(userPassword);
+                // Verificar si el usuario existe
+                if (!userPassword) {
+                    alert("El password ingresado no corresponde a ningún usuario");
+                    return;
+                }
+                this.gotohome();
+            } catch (error) {
+                console.error(error);
+                // Manejo de errores en caso de fallo al obtener los datos del usuario
+                alert("Error al verificar las credenciales");
+            }
         },
-        isValidName(name) {
-            // Verificar si el nombre contiene caracteres no permitidos (solo letras y espacios)
-            const regex = /^[a-zA-Z\s]+$/;
-            return regex.test(name);
+        gotohome() {
+            this.$router.push({ name: "home" });
         },
-        isValidEmail(email) {
-            // Verificar si el correo electrónico tiene un formato válido
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regex.test(email);
+        gotoFpassoword() {
+            this.$router.push({ name: "fpassword" });
         }
-    }
+        // ...
+    },
 };
 </script>
 <style>
@@ -152,9 +156,7 @@ export default {
     border: none;
 }
 
-.right-section .checkbox .p-checkbox-icon{
-    background-color:#FFD400;
-}
+
 
 @media (min-width: 430px) {
     .right-section {
@@ -166,8 +168,7 @@ export default {
 
     .right-section .title,
     .right-section .formulario,
-    .right-section .boton,
-    .right-section .checkbox .p-checkbox-icon{
+    .right-section .boton{
         position: static;
         width: 100%;
         max-width: 750px; /* Ajusta el ancho máximo deseado */

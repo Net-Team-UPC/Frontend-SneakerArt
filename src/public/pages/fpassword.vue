@@ -12,7 +12,7 @@
                 </div><br><br>
             </div>
             <br>
-            <pv-button class="boton" type="button" label="Click here to send a email" />
+            <pv-button class="boton" type="button" label="Click here to send a email" @click="gotologin" />
             <br>
         </div>
     </div>
@@ -26,6 +26,9 @@ export default {
         };
     },
     methods: {
+        gotologin() {
+            this.$router.push({ name: "login" });
+        }
     }
 };
 </script>

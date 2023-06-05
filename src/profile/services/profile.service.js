@@ -6,6 +6,12 @@ export class ProfileService {
     getById(id){
         return http.get(`/profile/${id}`);
     }
+    getByEmail(email) {
+        return http.get(`/profile`, { params: { email } });
+    }
+    getByPassword(password){
+        return http.get(`/profile`, { params: { password } });
+    }
     create(data){
         return http.post(`/profile`,data);
     }
