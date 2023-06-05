@@ -139,7 +139,7 @@ export default {
             .then((response) => {
                 this.designs=response.data;
             }).catch(e => this.errors.push(e));
-    },
+    }
 };
 </script>
 

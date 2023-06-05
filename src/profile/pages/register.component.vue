@@ -20,54 +20,87 @@
             </div>
             </div>
             <br>
-            <pv-button class="boton" type="button" label="Create Account" @click="gotologin"/>
+            <pv-button class="boton" type="button" label="Create Account" @click="handleButtonClick"/>
             <br>
-            <small class="login" style="color:#7C838A">Already have a account?<span style="color: #FFD400;">Login</span></small>
+            <small class="login" style="color:#7C838A">Already have a account?<span style="color: #FFD400;cursor: pointer;" @click="gotologin">Login</span></small>
         </div>
     </div>
 </template>
 <script>
+import { ProfileService } from "../services/profile.service.js";
+import { v4 as uuidv4 } from "uuid";
+
 export default {
     data() {
         return {
-            name: '',
-            email: '',
-            password: ''
+            profileService: null,
+            profiles: [],
+            errors: [],
+            name: "",
+            email: "",
+            password: "",
+            counter: 1, // Nuevo contador para generar IDs
+            showError: false, // Bandera para controlar si se muestra el error o no
+
         };
     },
     methods: {
-        handleButtonClick() {
-            this.handleCreateAccount()
-                .then(() => {
+        async handleButtonClick() {
+            try {
+                await this.handleCreateAccount();
+                if (!this.showError) {
                     this.gotologin();
-                })
-                .catch((error) => {
-                    // Manejo de errores en caso de fallo en handleCreateAccount
-                    console.error(error);
-                });
+                }
+            } catch (error) {
+                console.error(error);
+            }
         },
-        gotologin(){
-            this.$router.push({name:'login'})
+        gotologin() {
+            this.$router.push({ name: "login" });
         },
-        handleCreateAccount() {
+        async handleCreateAccount() {
+
+            const id = this.counter.toString(); // Convertir el contador a una cadena
             // Verificar si todos los campos están completos
             if (!this.name || !this.email || !this.password) {
-                alert('No ha llenado todos los campos');
+                alert("No ha llenado todos los campos");
+                this.showError = true; // Establecer la bandera de error en true
                 return;
             }
             // Validar el nombre
             if (!this.isValidName(this.name)) {
-                alert('Nombre invalido');
+                alert("Nombre invalido");
+                this.showError = true; // Establecer la bandera de error en true
                 return;
             }
             // Validar el correo electrónico
             if (!this.isValidEmail(this.email)) {
-                alert('Email invalido');
+                alert("Email invalido");
+                this.showError = true; // Establecer la bandera de error en true
                 return;
             }
 
-            // Si todas las validaciones pasan, puedes proceder a la siguiente vista o realizar otras acciones
-            // ...
+            // Crear un objeto con los datos del perfil
+            const profileData = {
+                id,
+                name: this.name,
+                email: this.email,
+                password: this.password,
+            };
+
+            try {
+                // Inicializar el servicio de perfil
+                this.profileService = new ProfileService();
+                // Guardar el perfil en la base de datos
+                await this.profileService.create(profileData);
+                // Otras acciones después de guardar el perfil en la base de datos
+
+            } catch (error) {
+                console.error(error);
+                // Manejo de errores en caso de fallo al guardar en la base de datos
+                alert("Error al crear la cuenta");
+            }
+            this.counter++; // Incrementar el contador para generar el nuevo ID
         },
         isValidName(name) {
             // Verificar si el nombre contiene caracteres no permitidos (solo letras y espacios)
@@ -78,8 +111,8 @@ export default {
             // Verificar si el correo electrónico tiene un formato válido
             const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return regex.test(email);
-        }
-    }
+        },
+    },
 };
 </script>
 <style>

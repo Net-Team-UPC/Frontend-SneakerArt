@@ -49,9 +49,14 @@
 </template>
 
 <script>
+import {ProfileService} from "../services/profile.service.js";
 export default {
+
     data() {
         return {
+            profileService:null,
+            profiles:[],
+            errors: [],
             name: '',
             age: '',
             country: '',
@@ -86,6 +91,13 @@ export default {
         toggleEditing() {
             this.isEditing = !this.isEditing;
         }
+    },
+    created(){
+        this.profileService = new ProfileService();
+        this.profileService.getAll()
+            .then((response) => {
+                this.profiles=response.data;
+            }).catch(e => this.errors.push(e));
     }
 };
 </script>

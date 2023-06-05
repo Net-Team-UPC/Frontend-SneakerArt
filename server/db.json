@@ -5,7 +5,7 @@
       "name": "Nike Air Force One blue",
       "description": "Personalized painted blue drip style slippers Available in sizes from 28 -43",
       "price": "$50",
-      "img":"https://i.etsystatic.com/28924822/r/il/266da9/3400342986/il_fullxfull.3400342986_oh75.jpg"
+      "img": "https://i.etsystatic.com/28924822/r/il/266da9/3400342986/il_fullxfull.3400342986_oh75.jpg"
     },
     {
       "id": 2,
@@ -19,28 +19,28 @@
       "name": "Converse all star feather",
       "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
       "price": "$55",
-      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+      "img": "https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
     },
     {
       "id": 3,
       "name": "Converse all star feather",
       "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
       "price": "$55",
-      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+      "img": "https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
     },
     {
       "id": 3,
       "name": "Converse all star feather",
       "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
       "price": "$55",
-      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+      "img": "https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
     },
     {
       "id": 3,
       "name": "Converse all star feather",
       "description": "Personalized light blue feather style slippers Available in sizes 28 to 43",
       "price": "$55",
-      "img":"https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
+      "img": "https://i.pinimg.com/originals/d8/72/da/d872da61a31ecb0901869056d5a8d935.jpg"
     }
   ],
   "design": [
@@ -139,6 +139,26 @@
       "color": "Black",
       "size": " ",
       "img": "src/assets/DesignPic/Converse/HombreRunStar/Black.jpg"
+    }
+  ],
+  "profile": [
+    {
+      "id": "1",
+      "name": "Piero Marquez",
+      "email": "pierix@gmail.com",
+      "password": "Upc123456"
+    },
+    {
+      "id": "2",
+      "name": "Gianina Laredo",
+      "email": "gia.laredo@gmail.com",
+      "password": "123454"
+    },
+    {
+      "id": "3",
+      "name": "Maki Markez",
+      "email": "maki@gmail.com",
+      "password": "upc"
     }
   ]
 }

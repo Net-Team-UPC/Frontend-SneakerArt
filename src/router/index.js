@@ -5,8 +5,8 @@ const ShoesListService = () =>
     import("../collection/pages/collection.component.vue");
 const AboutComponent = () => import("../public/pages/about.component.vue");
 const RegisterComponent = () =>
-    import("../public/pages/register.component.vue");
-const LoginComponent = () => import("../public/pages/login.component.vue");
+    import("../profile/pages/register.component.vue");
+const LoginComponent = () => import("../profile/pages/login.component.vue");
 const ShoesListComponent = () =>
     import("../collection/pages/collection.component.vue");
 const DesignComponent = () => import("../design/pages/design.component.vue");
