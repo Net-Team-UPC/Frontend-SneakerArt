@@ -22,9 +22,18 @@
         <pv-button class="boton" type="button" label="Search" @click="searchDesign" />
         <br>
     </div>
-    <div class="image-container" v-if="selectedImage">
-        <img :src="selectedImage" alt="Selected Design" class="design-image" />
-    </div>
+        <div class="image-container" v-if="selectedImage">
+            <div class="image-wrapper">
+                <img :src="selectedImage" alt="Selected Design" class="design-image" />
+                <div class="image-details">
+                    <p><strong>Sneaker:</strong> {{ this.selectedBrand.name}}</p>
+                    <p><strong>Model:</strong> {{ this.selectedModel }}</p>
+                    <p><strong>Size:</strong> {{ this.selectedSize.name }}</p>
+                    <p><strong>Color:</strong> {{ this.selectedColor.name }}</p>
+                </div>
+                <pv-button class="boton" type="button" label="Buy" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -155,18 +164,20 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 5%;
+    max-width: 900px; /* Ajusta el ancho máximo del contenedor según tus necesidades */
     margin: 0 auto; /* Ajusta el margen horizontal si es necesario */
     position: relative;
     top: 50%;
-    transform: translateY(50%);
-    margin-left: 30%; /* Ajusta el margen izquierdo en porcentaje para moverlo a la derecha */
+    transform: translateY(45%);
+    margin-left: 20%; /* Ajusta el margen izquierdo en porcentaje para moverlo a la derecha */
+
     .boton {
         position: absolute;
         top: 100%; /* Ajusta la posición vertical en relación con el contenedor */
         left: 50%; /* Ajusta la posición horizontal en relación con el contenedor */
         transform: translate(-50%, -50%); /* Centra el botón exactamente en el centro del contenedor */
-        width: 80%; /* Ajusta el ancho del botón utilizando un porcentaje */
+        width: 200%; /* Ajusta el ancho del botón utilizando un porcentaje */
         max-width: 200px; /* Establece un ancho máximo en píxeles */
         height: 40px;
         background-color: #FFD400;
@@ -179,18 +190,27 @@ export default {
 }
 .image-container {
     display: flex;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
     height: 50vh;
     width: 70vw;
     margin-top: -20vh; /* Ajusta el valor de margin-top según tus necesidades */
-    margin-left: 10vw; /* Ajusta el valor de margin-left según tus necesidades */
+    margin-left: 35vw; /* Ajusta el valor de margin-left según tus necesidades */
 }
 .design-image {
     width: 40%;
     height: auto;
     border: 4px solid darkseagreen; /* Ajusta el grosor y color del borde según tus preferencias */
-
+}
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-details {
+    margin-top: 10px; /* Ajusta la cantidad de margen superior según tus preferencias */
+    text-align: center; /* Alinea el texto al centro */
+    color:mediumpurple;
 }
 @media (max-width: 768px) {
     .boton,
