@@ -16,7 +16,7 @@
         </div>
         <br>
         <div class="color">
-            <pv-dropdown v-model="selectedColor" :options="availableColors" showClear optionLabel="name" placeholder="Select a Color" :disabled="!selectedModel" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; " />
+            <pv-dropdown v-model="selectedColor" :options="availableColors" showClear optionLabel="name" placeholder="Select a Color" :disabled="!selectedModel" class="w-full md:w-20rem" style="border: 5px solid darkseagreen; "/>
         </div>
         <br>
         <pv-button class="boton" type="button" label="Search" @click="searchDesign" />
@@ -26,12 +26,12 @@
             <div class="image-wrapper">
                 <img :src="selectedImage" alt="Selected Design" class="design-image" />
                 <div class="image-details">
-                    <p><strong>Sneaker:</strong> {{ this.selectedBrand.name}}</p>
-                    <p><strong>Model:</strong> {{ this.selectedModel }}</p>
-                    <p><strong>Size:</strong> {{ this.selectedSize.name }}</p>
-                    <p><strong>Color:</strong> {{ this.selectedColor.name }}</p>
+                    <p><strong>Sneaker:</strong> {{ selectedBrand }}</p>
+                    <p><strong>Model:</strong> {{ selectedModel }}</p>
+                    <p><strong>Size:</strong> {{ selectedSize ? selectedSize.name : '' }}</p>
+                    <p><strong>Color:</strong> {{ selectedColor ? selectedColor.name : '' }}</p>
                 </div>
-                <pv-button class="boton" type="button" label="Buy" />
+                <pv-button class="buy" type="button" label="Buy" />
             </div>
         </div>
     </div>
@@ -151,78 +151,87 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .design-view {
     min-height: 100vh;
     background-image: url('/src/assets/Fondo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
+
     background-position: center;
 }
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 5%;
-    max-width: 900px; /* Ajusta el ancho máximo del contenedor según tus necesidades */
-    margin: 0 auto; /* Ajusta el margen horizontal si es necesario */
+    max-width: 900px;
+    margin: 0 auto;
     position: relative;
     top: 50%;
-    transform: translateY(45%);
-    margin-left: 20%; /* Ajusta el margen izquierdo en porcentaje para moverlo a la derecha */
-
-    .boton {
-        position: absolute;
-        top: 100%; /* Ajusta la posición vertical en relación con el contenedor */
-        left: 50%; /* Ajusta la posición horizontal en relación con el contenedor */
-        transform: translate(-50%, -50%); /* Centra el botón exactamente en el centro del contenedor */
-        width: 200%; /* Ajusta el ancho del botón utilizando un porcentaje */
-        max-width: 200px; /* Establece un ancho máximo en píxeles */
-        height: 40px;
-        background-color: #FFD400;
-        color: black;
-        font-size: 25px;
-        font-weight: bold;
-        border-radius: 10px;
-        border: none;
-    }
+    transform: translateY(60%);
+    margin-left: 1%;
 }
+
+.boton {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 40px;
+    background-color: #FFD400;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
 .image-container {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 70vw;
-    margin-top: -20vh; /* Ajusta el valor de margin-top según tus necesidades */
-    margin-left: 35vw; /* Ajusta el valor de margin-left según tus necesidades */
+    height: 25%;
+    width: 25%;
+    margin-top: -16vh;
+    margin-left: 60vw;
 }
+
 .design-image {
-    width: 40%;
-    height: auto;
-    border: 4px solid darkseagreen; /* Ajusta el grosor y color del borde según tus preferencias */
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border: 4px solid darkseagreen;
 }
+
 .image-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .image-details {
-    margin-top: 10px; /* Ajusta la cantidad de margen superior según tus preferencias */
-    text-align: center; /* Alinea el texto al centro */
-    color:mediumpurple;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    background-color:#FC9222;
 }
+
 @media (max-width: 768px) {
     .boton,
     .container {
         width: 100%;
     }
+
     .image-container {
-        height: 30vh; /* Ajusta la altura en tamaños de pantalla más pequeños */
-        width: 90vw; /* Ajusta el ancho en tamaños de pantalla más pequeños */
-        margin-top: -15vh; /* Ajusta el valor de margin-top en tamaños de pantalla más pequeños */
-        margin-left: 5vw; /* Ajusta el valor de margin-left en tamaños de pantalla más pequeños */
+        height: 30vh;
+        width: 90vw;
+        margin-top: -15vh;
+        margin-left: 5vw;
     }
+
     .design-image {
         width: 200px;
         height: 200px;
